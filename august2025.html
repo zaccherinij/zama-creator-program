@@ -75,12 +75,11 @@ details[open] summary .toggle::before{content:"-"}
 <!-- Algorithm Info -->
 <section class="mb-2 sm:mb-3">
   <div class="bg-zinc-900 border border-gray-800 p-4 sm:p-6">
-    <h3 class="font-bold mb-4 text-sm sm:text-base">SCORING ALGORITHM <span class="text-zama">v0.1</span></h3>
     <!-- Highlights live only inside the accordion -->
     <details>
       <summary class="bg-black border border-gray-700 p-3 sm:p-4 text-left flex justify-between items-center hover:border-gray-500 transition-colors cursor-pointer">
-        <span class="font-bold text-sm sm:text-base">VIEW SCORING SYSTEM</span>
-        <span class="toggle font-mono">+</span>
+        <span class="font-bold text-sm sm:text-base">VIEW SCORING ALGORITHM v0.1</span>
+        <span class="toggle font-mono"></span>
       </summary>
 
       <div class="bg-black border border-gray-700 border-t-0 p-4 sm:p-6 overflow-x-auto">
@@ -95,20 +94,23 @@ details[open] summary .toggle::before{content:"-"}
 
             Eligibility:
             - To appear on the leaderboard and be cash‑eligible, you must publish at least 2 posts in the calendar month (UTC).
+            
             Anti‑gaming safeguards:
             - If observed engagement rate is >20%, the score is 0 (disqualified for the month).
             - Engagement is capped by reach: smaller reach gets tighter caps, so small accounts with unrealistically high ER don’t dominate.
             - If your reported ER is >10% with <50k impressions, we apply a strong penalty.
-          - We also apply a $30 CPM cap on cash payouts (see below).
+            - We also apply a $30 CPM cap on cash payouts (see below).
 
-          How your score is computed:
-          We combine the factors above into a single score. More reach and smart engagement help; extremely high ER on low reach is dampened. Very high quote activity counts more than likes/reposts, but only within sane limits.
+            How your score is computed:
+            - We combine the factors above into a single score. 
+            - More reach and smart engagement help; extremely high ER on low reach is dampened. 
+            - Very high quote activity counts more than likes/reposts, but only within sane limits.
 
-          Rewards:
-          - Top 100 share a $50,000 monthly pool (claimable in $USDC or $ZAMA token at TGE).
-          - Payouts is based on score^α (a curved split; α currently 1.25).
-          - A $30 CPM cap applies to Top‑100 prizes; any excess is redistributed to uncapped winners.
-          - Ranks 101–250 receive an OG NFT unlocking alpha access.
+            Rewards:
+            - Top 100 share a $50,000 monthly pool (claimable in $USDC or $ZAMA token at TGE).
+            - Payouts is based on score^α (a curved split; α currently 1.25).
+            - A $30 CPM cap applies to Top‑100 prizes; any excess is redistributed to uncapped winners.
+            - Ranks 101–250 receive an OG NFT unlocking alpha access.
             </div>
 
           <div class="text-zama font-bold mb-2">BASE SCORE CALCULATION (v0.1):</div>
@@ -138,20 +140,17 @@ details[open] summary .toggle::before{content:"-"}
             - finalScore  = baseScore × erMult × postMult
 
             Eligibility filter: 
-            Row excluded from leaderboard if posts < 2 or impressions ≤ 0.
+            - Row excluded from leaderboard if posts < 2 or impressions ≤ 0.
 
             Payouts (Top‑100 only):
-            Curved weighting: each winner gets share ∝ (finalScore)^α, currently α = 1.25.
-
-            $30 CPM cap: maxPrize = (impressions / 1000) × $30.
-            If capped, we redistribute excess proportionally among the uncapped Top‑100 using the same weights.
-
-            Ranks 101–250: OG NFT (no cash).
+            - Curved weighting: each winner gets share ∝ (finalScore)^α, currently α = 1.25.
+            - $30 CPM cap: maxPrize = (impressions / 1000) × $30.
+            - If capped, we redistribute excess proportionally among the uncapped Top‑100 using the same weights.
+            - Ranks 101–250: OG NFT (no cash).
             </div>
 
             <div class="text-zama font-bold mb-2 mt-4">REWARDS</div>
-            <div class="bg-zinc-900 p-3 sm:p-4 border-l-4 border-zama mono whitespace-pre-line">
-            - Curved weighting: each winner gets share ∝ (finalScore)^α, currently α = 1.25.
+            <div class="bg-zinc-900 p-3 sm:p-4 border-l-4 border-zama mono whitespace-pre-line">- Curved weighting: each winner gets share ∝ (finalScore)^α, currently α = 1.25.
             - $30 CPM cap: maxPrize = (impressions / 1000) × $30.
             - If capped, we redistribute excess proportionally among the uncapped Top‑100 using the same weights.
             - Ranks 101–250: Zama OG NFT.
